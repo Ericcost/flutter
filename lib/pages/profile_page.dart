@@ -31,6 +31,10 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.dark_mode),
+      ),
     );
   }
 }
