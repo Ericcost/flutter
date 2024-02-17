@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-String? text;
+import 'package:learnflutter/class/item_class.dart';
+import 'package:learnflutter/widget/card_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,15 +11,23 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('LearnFlutter'),
       ),
-      body: Column(
-        children: [
-          Card(
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(text!),
-            ), 
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            CardWidget(item: ItemClass(title: 'Rocket', imagePath: 'images/rocket.png')),
+            Row(
+              children: [
+                Expanded(
+                  child: CardWidget(item: ItemClass(title: 'Space', imagePath: 'images/space.png')),
+                ),
+                Expanded(
+                  child: CardWidget(item: ItemClass(title: 'Travel', imagePath: 'images/travel.png')),
+                ),
+              ],
+            ),
+            CardWidget(item: ItemClass(title: 'Yeah', imagePath: 'images/yeah.png')),
+          ],
+        ),
       )
     );
   }
